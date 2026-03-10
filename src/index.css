@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  transition: 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.9;
+}
