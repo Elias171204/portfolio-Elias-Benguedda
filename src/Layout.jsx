@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       <header style={styles.header}>
         <div style={styles.headerInner}>
           <Link to="/" style={styles.brand}>
-            Your Name — Quant Portfolio
+            Elias Benguedda — Portfolio
           </Link>
 
           <nav style={styles.nav}>
