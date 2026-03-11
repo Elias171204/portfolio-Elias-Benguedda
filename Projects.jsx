@@ -1,35 +1,47 @@
+import Layout from "./Layout";
+import { styles } from "./siteStyles";
+import { projects } from "./siteData";
+
 export default function Projects() {
-
   return (
+    <Layout>
+      <section style={styles.section}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "end",
+            gap: "24px",
+            marginBottom: "32px",
+          }}
+        >
+          <div>
+            <p style={styles.kicker}>projects</p>
+            <h2 style={styles.sectionTitle}>Selected work</h2>
+          </div>
 
-    <div className="page">
+          <p style={styles.mutedText}>
+            Designed to remain compatible with future interactive modules:
+            backtests, factor dashboards, time-series visualizations, and live
+            research demos.
+          </p>
+        </div>
 
-      <h1>Projects</h1>
-
-      <h3>Market Intelligence Engine</h3>
-
-      <p>
-        Infrastructure combining financial news scraping, market data
-        collection and NLP analysis to study relationships between
-        news flow and market movements.
-      </p>
-
-      <h3>TradingView-style iOS App</h3>
-
-      <p>
-        Mobile application for real-time visualization of financial markets
-        including charting tools and technical indicators.
-      </p>
-
-      <h3>Market Data Pipeline</h3>
-
-      <p>
-        Automated infrastructure collecting market data through APIs,
-        storing them in databases and preparing them for quantitative research.
-      </p>
-
-    </div>
-
-  )
-
+        <div style={styles.list}>
+          {projects.map((project) => (
+            <article key={project.title} style={styles.card}>
+              <div style={styles.cardTop}>
+                <div>
+                  <p style={styles.cardTag}>{project.tag}</p>
+                  <h3 style={styles.cardTitle}>{project.title}</h3>
+                  <p style={styles.cardText}>{project.description}</p>
+                </div>
+                <div style={styles.cardYear}>{project.year}</div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </Layout>
+  );
 }
