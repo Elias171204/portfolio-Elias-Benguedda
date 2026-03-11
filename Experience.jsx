@@ -1,33 +1,30 @@
+import Layout from "./Layout";
+import { styles } from "./siteStyles";
+import { experience } from "./siteData";
+
 export default function Experience() {
-
   return (
+    <Layout>
+      <section style={styles.sectionSplit}>
+        <div>
+          <p style={styles.kicker}>experience</p>
+          <h2 style={styles.sectionTitle}>
+            Academic and professional trajectory
+          </h2>
+        </div>
 
-    <div className="page">
-
-      <h1>Experience</h1>
-
-      <h3>Renault Trucks — Testing Technology</h3>
-
-      <p>
-        Work on instrumentation systems and measurement technologies
-        within the testing department.
-      </p>
-
-      <h3>Market Environment Exposure — Natixis</h3>
-
-      <p>
-        Exposure to structured products and trading environment.
-      </p>
-
-      <h3>Mines Saint-Étienne</h3>
-
-      <p>
-        Engineering education with specialization in data science and
-        applied mathematics for finance.
-      </p>
-
-    </div>
-
-  )
-
+        <div style={styles.timeline}>
+          {experience.map((item) => (
+            <div key={item.title} style={styles.timelineItem}>
+              <div style={styles.timelinePeriod}>{item.period}</div>
+              <div>
+                <h3 style={styles.timelineTitle}>{item.title}</h3>
+                <p style={styles.cardText}>{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </Layout>
+  );
 }

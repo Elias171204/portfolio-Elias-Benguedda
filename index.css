@@ -1,20 +1,13 @@
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+html, body, #root {
   margin: 0;
-  background: #0a0a0a;
+  padding: 0;
+  min-height: 100%;
 }
 
 * {
   box-sizing: border-box;
 }
 
-a {
-  transition: 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.9;
+body {
+  background: #0a0a0a;
 }

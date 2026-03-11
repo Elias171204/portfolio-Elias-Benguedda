@@ -1,24 +1,26 @@
+import Layout from "./Layout";
+import { styles } from "./siteStyles";
+import { interests } from "./siteData";
+
 export default function Research() {
-
   return (
+    <Layout>
+      <section style={styles.sectionSplit}>
+        <div>
+          <p style={styles.kicker}>research interests</p>
+          <h2 style={styles.sectionTitle}>
+            Domains I want to explore deeply
+          </h2>
+        </div>
 
-    <div className="page">
-
-      <h1>Research Interests</h1>
-
-      <ul>
-
-        <li>Volatility modelling</li>
-        <li>Market microstructure</li>
-        <li>Financial machine learning</li>
-        <li>Options and derivatives</li>
-        <li>Macro-financial signals</li>
-        <li>Data pipelines for quantitative research</li>
-
-      </ul>
-
-    </div>
-
-  )
-
+        <div style={styles.tags}>
+          {interests.map((item) => (
+            <span key={item} style={styles.tag}>
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
+    </Layout>
+  );
 }
